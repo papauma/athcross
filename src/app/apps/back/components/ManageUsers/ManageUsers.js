@@ -1,29 +1,18 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { initState, deleteAthlete} from '../../../../../features/athletes/athletesSlice'
-import { getAll } from './../../../../services/atheletesService';
+import { useState } from 'react'
+import { useDispatch} from 'react-redux';
+import { deleteAthlete} from '../../../../../features/athletes/athletesSlice'
 import { AthleteForm } from '../AthleteForm/AthleteForm'
+import useAtheletes from '../../../../../features/athletes/athletesHooks'
+
+
 
 
 export const ManageUsers = () => {
-  const athletesState = useSelector(state => state.athletes)
-  const dispatch = useDispatch()
+
+  const {athletesState} = useAtheletes()
   const [viewForm, setViewForm] = useState(false)
 
-
-
-  useEffect(() => {
-    getAll()
-    .then(res => res.json())
-    .then(
-      (result) => {
-        dispatch(initState(result.data))
-      },
-      (error) => {
-        // acciones a realizar al recibir un KO
-      }
-    )
-  }, [])
+  const dispatch = useDispatch()
 
   const handleNewClick = () => {
     setViewForm(true)

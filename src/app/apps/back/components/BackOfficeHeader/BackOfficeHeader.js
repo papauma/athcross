@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BreadCrumb } from '../BreadCrumb/BreadCrumb';
 
 import './BackOfficeHeader.css'
 
@@ -6,6 +7,7 @@ export const BackOfficeHeader = (props) => {
     return (
         <>
             <h1 className="BackOfficeHeader__title">Welcome {props.user}</h1>
+            <BreadCrumb />
             <div>Actions
                 <div>
                     <nav className='BackOfficeHeader__nav'>
