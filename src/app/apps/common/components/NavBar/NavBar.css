@@ -1,0 +1,14 @@
+.NavBar {
+    background-color: #ccc;
+}
+
+.NavBar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.NavBar__list a, .NavBar__list a:hover, .NavBar__list a:focus, .NavBar__list a:link{
+    color: inherit;
+    text-decoration: none;
+}
