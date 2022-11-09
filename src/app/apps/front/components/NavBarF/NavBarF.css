@@ -1,0 +1,12 @@
+.navBarF {
+  list-style: none;
+  list-style: none;
+  margin: 0 200px;
+  padding: 0;      
+}
+
+
+.navBarF_item {
+  display: inline;
+  margin: 0 10px;
+}

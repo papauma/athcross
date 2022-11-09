@@ -1,0 +1,10 @@
+.AhtletesList {
+    border: 1px solid;
+    width: 200px;
+}
+.AhtletesList__list {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: left;
+}

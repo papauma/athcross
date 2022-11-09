@@ -1,0 +1,7 @@
+.TopThree {
+    border: 1px solid;
+    width: fit-content;    
+}
+.TopThree__title {
+    text-align: center;
+}
