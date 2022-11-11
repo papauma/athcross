@@ -4,16 +4,19 @@ import { Fittest } from './components/Fittest/Fittest';
 import { Home } from './components/Home/Home';
 import { NavBarF } from './components/NavBarF/NavBarF';
 import { TopThree } from './components/TopThree/TopThree';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './Front.css'
 
 const Front = () => {
   const {athletesState} = useAtheletes()
+  //const athletesState = useSelector(state => state.athletes)
+  console.log(athletesState)
   return (
     <>
       <Home />
       <NavBarF />
-      <TopThree />
+      <TopThree listAthletes={athletesState} />
       <div className='Front_tableListsAtheletes'>{athletesState.length ?
       <table>
         <thead>
@@ -27,7 +30,7 @@ const Front = () => {
         <tbody>
         {athletesState.map((athlete) => {
           return (
-            <tr key={athlete.id}>
+            <tr key={athlete.id} data-testid='athletes'>
               <td>{athlete.id}</td>
               <td>{athlete.name}</td>
               <td>{athlete.surname}</td>
@@ -36,8 +39,8 @@ const Front = () => {
             )})}
           </tbody>
       </table> : ''}</div>
-      <Fittest gender='MALE'/>
-      <Fittest gender='FEMALE'/>
+      <Fittest gender='MALE' listAthletes={athletesState} />
+      <Fittest gender='FEMALE' listAthletes={athletesState} />
 
     </>
   )

@@ -19,12 +19,7 @@ function App() {
             <Route path="/backOffice/userStadistics" element={<UserStatistics />  } />
           </Route>
         </Routes>
-{/*
-        <div className="App">
-          <h1>Hello World!!</h1>
-          <AthleteForm />
-          <AhtletesList />
-    </div> */}
+        <div>App Athcross &copy; 2022 </div>
       </BrowserRouter>
   );
 }

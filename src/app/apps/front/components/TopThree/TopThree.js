@@ -1,17 +1,15 @@
-import useAtheletes from '../../../../../features/athletes/athletesHooks'
-
 import './TopThree.css'
 
 const NUM_TOP = 3
 
-export const TopThree = () => {
-  let {athletesState} = useAtheletes()
-  if (athletesState.length) {
-        athletesState = athletesState.slice(0,athletesState.length).sort((a,b) => b.points - a.points).slice(0,NUM_TOP)
+export const TopThree = (props) => {
+  let listAthletes = props.listAthletes
+  if (listAthletes.length) {
+        listAthletes = listAthletes.slice(0,listAthletes.length).sort((a,b) => b.points - a.points).slice(0,NUM_TOP)
 
   }
   return (
-    athletesState.length ? <div className='TopThree'>
+    listAthletes.length ? <div className='TopThree'>
         <h2 className='TopThree__title'>TopThree</h2>
         <table>
             <thead>
@@ -22,7 +20,7 @@ export const TopThree = () => {
                 </tr>
             </thead>
             <tbody>
-            {athletesState.map((athlete) => {
+            {listAthletes.map((athlete) => {
                 return (<tr key={athlete.id}>
                     <td>{athlete.name}</td>
                     <td>{athlete.surname}</td>

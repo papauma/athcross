@@ -7,18 +7,17 @@ const useAtheletes = () => {
     const dispatch = useDispatch()
     const athletesState = useSelector(state => state.athletes)
     useEffect(() => {
-      getAllAthletes()
-      .then(res => res.json())
-      .then(
-        (result) => {
-          dispatch(initState(result))
-        },
-        (error) => {
-          // acciones a realizar al recibir un KO
-        }
-      )
-
-    }, [dispatch])
+        getAllAthletes()
+        .then(res => res.json())
+        .then(
+          (result) => {
+            dispatch(initState(result))
+          },
+          (error) => {
+            // acciones a realizar al recibir un KO
+          }
+        )
+    }, [])
 
     return {athletesState}
   }
