@@ -5,10 +5,8 @@ import {BackOfficeHeader} from './components/BackOfficeHeader/BackOfficeHeader'
 
 export const BackOffice = () => {
     const userActiveState = useSelector(state => state.userActive)
-    
+
     console.log(['Login',userActiveState])
-    const { pathname } = useLocation();
-    console.log(pathname)
 
   return (
     <>
